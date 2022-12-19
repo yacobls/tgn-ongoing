@@ -7,5 +7,5 @@ module.exports = function(app) {
         .get(jsonku.index);
 
     app.route('/appear')
-        .get(jsonku.showalldata);
+        .get(jsonku.showalldatasu);
 }

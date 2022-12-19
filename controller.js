@@ -8,7 +8,7 @@ exports.index = function(req,res){
 };
 
 // Displays all data su
-exports.showalldata = function(req,res){
+exports.showalldatasu = function(req,res){
     connection.query('SELECT * FROM su', function(error, rows, fileds){
         if(error){
             connection.log(error);
