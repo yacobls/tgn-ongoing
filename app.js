@@ -1,21 +1,15 @@
 const express = require('express');
-// master
+const bodyParser = require('body-parser');
 const app = express();
 
-const port = 3000;
-app.use(require('./routes'));
-app.get('/', (req, res) => {
-    res.send({message:"Hello Get !"});
-});
-app.post('/', (req, res) => {
-    res.send({message:"Hello Get !"});
-});
-app.delete('/user', (req, res) => {
-    res.send({message:"Hello user !"});
-});
+//Parse application/json
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
 //Call routes
 var routes = require('./routes');
 routes(app);
 
-app.listen(port, () => console.log(`Hello world app listening on port ${port}!`))
+app.listen(3000, () => {
+    console.log('Server started on port');
+});
