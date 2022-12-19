@@ -7,7 +7,7 @@ exports.index = function(req,res){
     response.ok("The REST API application is already running",res)
 };
 
-// Displays all data
+// Displays all data su
 exports.showalldata = function(req,res){
     connection.query('SELECT * FROM su', function(error, rows, fileds){
         if(error){
