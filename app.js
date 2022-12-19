@@ -14,5 +14,8 @@ app.delete('/user', (req, res) => {
     res.send({message:"Hello user !"});
 });
 
+//Call routes
+var routes = require('./routes');
+routes(app);
 
 app.listen(port, () => console.log(`Hello world app listening on port ${port}!`))
