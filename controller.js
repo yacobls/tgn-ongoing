@@ -17,3 +17,16 @@ exports.showalldatasu = function(req,res){
         }
     });
 };
+
+// Show all su data by id
+exports.showallsudatabyid = function(req,res){
+    let id = req.params.id;
+    connection.query('SELECT * FROM su WHERE id_su = ?', [id],
+        function(error, rows, fileds){
+            if(error){
+                connection.log(error);
+        }else {
+            response.ok(rows, res)
+        }
+    });
+};
