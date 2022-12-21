@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(app) {
+module.exports = function (app) {
     var jsonku = require('./controller');
 
     app.route('/')
@@ -8,7 +8,10 @@ module.exports = function(app) {
 
     app.route('/appear')
         .get(jsonku.showalldatasu);
-    
+
     app.route('/add')
         .post(jsonku.adddatasu);
+
+    app.route('/edit')
+        .put(jsonku.editdatasu);
 }
