@@ -30,3 +30,20 @@ exports.showallsudatabyid = function(req,res){
         }
     });
 };
+
+// Add data su (NOT FIXED IN THE PHOTO SECTION)
+exports.adddatasu = function(req,res){
+    var nama_su = req.body.nama_su;
+    var email_su = req.body.email_su;
+    var password_su = req.body.password_su;
+
+    connection.query('INSERT INTO su (nama_su,email_su,password_su) VALUES(?,?,?)',
+    [nama_su, email_su, password_su],
+    function (error, rows, fields){
+        if(error){
+            console.log(error);
+        }else {
+            response.ok("Successfully Added Data!",res)
+        }
+    });
+};
