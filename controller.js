@@ -64,3 +64,17 @@ exports.editdatasu = function (req, res) {
             }
         });
 };
+
+// Delete data by id
+exports.deletedatasu = function (req, res) {
+    var id_su = req.body.id_su;
+
+    connection.query('DELETE FROM su WHERE id_su=?',[id_su],
+        function (error, rows, fields) {
+            if (error) {
+                console.log(error);
+            } else {
+                response.ok("Successfully Delete Data!", res)
+            }
+        });
+};
